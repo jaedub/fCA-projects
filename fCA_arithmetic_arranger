@@ -1,0 +1,66 @@
+def arithmetic_arranger(problems, solve = False):
+
+  if(len(problems) > 5):
+    return "Error: Too many problems."
+  
+problems = ["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]
+
+first_line= ""
+second_line=""
+dash_line= ""
+answer_line=""
+string = ""
+
+for problem in problems:
+    
+    first_operand = problem.split(" ")[0]
+    operator = problem.split(" ")[1]
+    second_operand = problem.split(" ")[2]
+    
+#checking that operands (indices [0] & [2]) contain only digits
+    if not (split[0].isdigit() and split[2].isdigit()): 
+       return "Error: Numbers must only contain digits."
+        
+    else:
+# checking that operation (index [1]) is only addition (+) or subtraction (-)
+    if (split[1]) != '+' or '-':   my original script
+      return "Error: Operator must be '+' or '-'."  my original script
+
+# checking length of numbers is 4 or less
+    if (len(first_operand)) >= 5 and (len(second_operand)) >= 5:
+       return "Error: Numbers cannot contain more than four digits."
+    
+    # setting answers according to operation sign
+sum = ""
+if(operator == "+"):
+    answer = str(int(first_operand) + int(second_operand))
+elif(operator == "-"):
+    answer = str(int(first_operand) - int(second_operand))
+    
+    # setting line lengths & justification
+    length = max(len(first_operand), len(second_operand)) + 2
+    first_line = str(first_operand).rjust(length)
+    second_line = operator + str(second_operand).rjust(length - 1)
+    dash_line = '_'*max(len(first_operand), len(second_operand))
+    answer = str(sum).rjust(length)
+    
+    # setting four spaces between 1, 2, & 3 problems
+    if problem != problems[-1]:
+        first_line += top + '    '
+        second_line += bottom + '    '
+        dash_line += line + '    '
+        answer_line += answer + '    '
+    else:
+        first_line += top
+        second_line += bottom
+        dash_line += line
+        answer_line += answer
+    
+    # setting problem format for unsolved and solved problems
+    if solve == True:
+      problems = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]:
+      
+        string = first_line + '\n' + second_line + '\n' +  + '\dash_line \n' + answer_line
+    else:
+        string = first_line + '\n' + second_line + '\n' +  + '\dash_line'
+    return string
